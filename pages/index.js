@@ -335,58 +335,21 @@ export default function Home() {
       </Head>
 
       <Header />
+      <TopicNav />
 
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-8">
-            {/* New Arrivals Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 gradient-text">New Arrivals</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Placeholder for article cards */}
-                <div className="bg-white rounded-lg shadow-soft p-6 hover-card">
-                  <h3 className="text-xl font-semibold mb-3">Coming Soon!</h3>
-                  <p className="text-gray-600">We're preparing amazing content for you. Stay tuned!</p>
-                </div>
-              </div>
-            </section>
-
-            {/* The Watch Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 gradient-text">The Watch</h2>
-              <div className="bg-white rounded-lg shadow-soft p-6">
-                <p className="text-gray-600">Trending topics and hot discussions coming soon.</p>
-              </div>
-            </section>
-
-            {/* AdSense Integration */}
+            <NewArrivalsSection />
+            <WatchSection />
             <GoogleAdsense slot="1234567890" />
           </div>
 
           {/* Sidebar */}
           <aside className="lg:col-span-4">
-            {/* Newsletter Section */}
-            <div className="bg-white rounded-lg shadow-soft p-6 mb-8">
-              <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
-              <p className="text-gray-600 mb-4">Stay updated with our latest trends!</p>
-              <form className="space-y-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="newsletter-input"
-                />
-                <button type="submit" className="newsletter-button w-full">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-
-            {/* Daily Quiz Section */}
-            <div className="bg-white rounded-lg shadow-soft p-6">
-              <h3 className="text-xl font-semibold mb-4">Daily Quiz</h3>
-              <p className="text-gray-600">Test your knowledge with our daily quiz. Coming soon!</p>
-            </div>
+            <NewsletterSection />
+            <QuizSection />
           </aside>
         </div>
       </main>
