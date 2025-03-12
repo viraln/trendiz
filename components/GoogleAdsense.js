@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const GoogleAdsense = ({ slot }) => {
+export default function GoogleAdsense({ slot }) {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -10,7 +10,7 @@ const GoogleAdsense = ({ slot }) => {
   }, []);
 
   return (
-    <div className="ad-container my-4">
+    <div className="my-8">
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
@@ -21,6 +21,4 @@ const GoogleAdsense = ({ slot }) => {
       />
     </div>
   );
-};
-
-export default GoogleAdsense; 
+} 
