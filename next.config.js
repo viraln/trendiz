@@ -1,21 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: 'export',
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-        pathname: '/**',
       },
     ],
+    unoptimized: true,
   },
-  // Enable static exports
-  output: 'export',
-  // Configure environment variables that should be available on the client
-  env: {
-    ADSENSE_CLIENT: process.env.ADSENSE_CLIENT,
-  },
+  basePath: '/trendiz',
+  assetPrefix: '/trendiz/',
 }
 
 module.exports = nextConfig 
