@@ -12,6 +12,7 @@ const nextConfig = {
   },
   basePath: '/trendiz',
   assetPrefix: '/trendiz/',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 

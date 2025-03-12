@@ -347,6 +347,7 @@ export default function Home() {
       <Head>
         <title>Trendiz - Coming Soon</title>
         <meta name="description" content="Trendiz - Your source for the latest tech and lifestyle trends" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <main className="container mx-auto px-4 py-16">
@@ -361,6 +362,28 @@ export default function Home() {
           <p className="mt-4 text-gray-500">
             We're working on bringing you amazing content. Stay tuned!
           </p>
+        </div>
+
+        <div className="max-w-2xl mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold mb-4 text-center text-indigo-600">Coming Soon</h2>
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <span className="text-green-500 mr-2">✓</span>
+              <span>AI-powered article generation</span>
+            </div>
+            <div className="flex items-center">
+              <span className="text-green-500 mr-2">✓</span>
+              <span>Dynamic image fetching</span>
+            </div>
+            <div className="flex items-center">
+              <span className="text-green-500 mr-2">✓</span>
+              <span>Comment system with upvoting</span>
+            </div>
+            <div className="flex items-center">
+              <span className="text-green-500 mr-2">✓</span>
+              <span>Article reactions and sharing</span>
+            </div>
+          </div>
         </div>
 
         <GoogleAdsense slot="5839017069" />
