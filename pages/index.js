@@ -345,7 +345,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
       <Head>
-        <title>Trendiz - Coming Soon</title>
+        <title>Trendiz - Tech & Lifestyle Trends</title>
         <meta name="description" content="Trendiz - Your source for the latest tech and lifestyle trends" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -360,7 +360,7 @@ export default function Home() {
             Your source for the latest tech and lifestyle trends
           </p>
           <p className="mt-4 text-gray-500">
-            We're working on bringing you amazing content. Stay tuned!
+            We're launching soon! Stay tuned for amazing content.
           </p>
         </div>
 
