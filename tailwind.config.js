@@ -3,7 +3,6 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -13,14 +12,21 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            'code::before': {
-              content: '""'
+            maxWidth: '65ch',
+            color: 'inherit',
+            a: {
+              color: 'inherit',
+              textDecoration: 'none',
+              fontWeight: '500',
             },
-            'code::after': {
-              content: '""'
-            }
-          }
-        }
+            strong: {
+              color: 'inherit',
+            },
+            code: {
+              color: 'inherit',
+            },
+          },
+        },
       }
     },
   },
