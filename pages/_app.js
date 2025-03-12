@@ -9,10 +9,11 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Trendiz - AI-Curated Tech Insights</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-adsense-account" content="ca-pub-7120248945278154" />
       </Head>
       <Script
         async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7120248945278154"
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
