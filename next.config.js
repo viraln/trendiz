@@ -1,18 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
-    unoptimized: true,
-  },
   basePath: '/trendiz',
-  assetPrefix: '/trendiz/',
-  trailingSlash: true,
+  images: {
+    unoptimized: true,
+    domains: ['images.unsplash.com']
+  },
+  assetPrefix: '/trendiz/'
 }
 
 module.exports = nextConfig 

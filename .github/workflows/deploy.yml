@@ -27,9 +27,13 @@ jobs:
         
       - name: Build website
         run: yarn build
+
+      - name: Add .nojekyll file
+        run: touch out/.nojekyll
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out 
+          publish_dir: ./out
+          cname: # optional - if you have a custom domain 
