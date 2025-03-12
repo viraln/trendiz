@@ -24,6 +24,7 @@
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
 }
 
