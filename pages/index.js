@@ -34,51 +34,11 @@ const TopicNav = () => {
     { name: 'Space', icon: '🚀', count: '6' },
     { name: 'Climate', icon: '🌍', count: '11', hot: true },
     { name: 'Biology', icon: '🧬', count: '7' },
-    { name: 'Medicine', icon: '💊', count: '9' },
-    
-    // Entertainment & Media
-    { name: 'Entertainment', icon: '🎬', count: '16', hot: true },
-    { name: 'Movies', icon: '🎥', count: '12' },
-    { name: 'Music', icon: '🎵', count: '10' },
-    { name: 'TV', icon: '📺', count: '8' },
-    { name: 'Streaming', icon: '🎯', count: '7' },
-    { name: 'Social', icon: '👥', count: '13' },
-    
-    // Lifestyle & Culture
-    { name: 'Lifestyle', icon: '🌟', count: '14' },
-    { name: 'Food', icon: '🍳', count: '11', hot: true },
-    { name: 'Travel', icon: '✈️', count: '9' },
-    { name: 'Fashion', icon: '👗', count: '8' },
-    { name: 'Sports', icon: '⚽', count: '12' },
-    { name: 'Fitness', icon: '💪', count: '7' },
-    
-    // Education & Career
-    { name: 'Education', icon: '📚', count: '10' },
-    { name: 'Career', icon: '💼', count: '8' },
-    { name: 'Skills', icon: '🎯', count: '6' },
-    { name: 'Learning', icon: '🎓', count: '9' },
-    
-    // Arts & Design
-    { name: 'Art', icon: '🎨', count: '7' },
-    { name: 'Design', icon: '✏️', count: '9' },
-    { name: 'Photography', icon: '📸', count: '6' },
-    { name: 'Architecture', icon: '🏛️', count: '5' },
-    
-    // Society & Politics
-    { name: 'Society', icon: '🌐', count: '11' },
-    { name: 'Politics', icon: '🏛️', count: '13', hot: true },
-    { name: 'Culture', icon: '🎭', count: '8' },
-    { name: 'Environment', icon: '🌱', count: '10' },
-    
-    // Innovation & Future
-    { name: 'Innovation', icon: '💡', count: '12', hot: true },
-    { name: 'Future', icon: '🔮', count: '9' },
-    { name: 'Trends', icon: '📈', count: '11' },
-    { name: 'Research', icon: '🔍', count: '7' }
+    { name: 'Medicine', icon: '💊', count: '9' }
   ]
 
   return (
-    <div className="w-full overflow-x-auto bg-white shadow-sm sticky top-0 z-50">
+    <div className="w-full overflow-x-auto bg-white shadow-sm sticky top-16 z-40">
       <div className="flex space-x-4 px-4 py-3 min-w-max">
         {topics.map((topic) => (
           <Link
@@ -113,7 +73,6 @@ function NewsletterSection() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setStatus('subscribed')
-    // Add actual newsletter subscription logic here
   }
 
   return (
@@ -212,7 +171,45 @@ function QuizSection() {
   )
 }
 
-function WatchSection({ posts }) {
+const defaultImages = [
+  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=800&q=60'
+]
+
+// Sample posts data
+const samplePosts = [
+  {
+    slug: 'ai-revolution-2024',
+    title: 'The AI Revolution: What to Expect in 2024',
+    excerpt: 'Exploring the latest developments in artificial intelligence and their impact on various industries.',
+    date: '2024-03-12T10:00:00Z',
+    image: defaultImages[0],
+    category: 'AI',
+    isNew: true,
+    duration: '5:30'
+  },
+  {
+    slug: 'web-development-trends',
+    title: 'Top Web Development Trends for Modern Applications',
+    excerpt: 'A comprehensive look at the latest technologies and practices in web development.',
+    date: '2024-03-11T15:30:00Z',
+    image: defaultImages[1],
+    category: 'Tech',
+    duration: '4:45'
+  },
+  {
+    slug: 'cybersecurity-essentials',
+    title: 'Essential Cybersecurity Practices for Digital Age',
+    excerpt: 'Key strategies to protect your digital assets and maintain online security.',
+    date: '2024-03-10T09:15:00Z',
+    image: defaultImages[2],
+    category: 'Security',
+    duration: '6:20'
+  }
+]
+
+function WatchSection({ posts = samplePosts }) {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
@@ -225,7 +222,7 @@ function WatchSection({ posts }) {
         </Link>
       </div>
       <div className="space-y-4">
-        {posts.slice(0, 3).map((post) => (
+        {posts.map((post) => (
           <Link key={post.slug} href={`/posts/${post.slug}`} className="group block">
             <div className="relative h-40 rounded-lg overflow-hidden">
               <Image
@@ -245,7 +242,7 @@ function WatchSection({ posts }) {
               <div className="absolute bottom-0 p-3">
                 <div className="flex items-center space-x-2 mb-1">
                   <span className="bg-black/50 text-white text-xs px-2 py-1 rounded">
-                    {post.duration || '4:20'}
+                    {post.duration}
                   </span>
                   {post.isNew && (
                     <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">New</span>
@@ -263,7 +260,7 @@ function WatchSection({ posts }) {
   )
 }
 
-function NewArrivalsSection({ posts }) {
+function NewArrivalsSection({ posts = samplePosts }) {
   return (
     <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 mb-8">
       <div className="flex items-center justify-between mb-6">
@@ -283,7 +280,7 @@ function NewArrivalsSection({ posts }) {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {posts.map((post, index) => (
+        {posts.map((post) => (
           <Link 
             key={post.slug} 
             href={`/posts/${post.slug}`}
@@ -291,18 +288,20 @@ function NewArrivalsSection({ posts }) {
           >
             <div className="relative h-48">
               <Image
-                src={post.image || defaultImages[0]}
+                src={post.image}
                 alt={post.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-              <div className="absolute top-2 right-2">
-                <span className="px-2 py-1 bg-green-500 text-white text-xs rounded-full font-medium">
-                  New
-                </span>
-              </div>
+              {post.isNew && (
+                <div className="absolute top-2 right-2">
+                  <span className="px-2 py-1 bg-green-500 text-white text-xs rounded-full font-medium">
+                    New
+                  </span>
+                </div>
+              )}
             </div>
             <div className="p-4">
               <h3 className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors duration-200 line-clamp-2">
@@ -326,67 +325,30 @@ function NewArrivalsSection({ posts }) {
   )
 }
 
-const defaultImages = [
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60',
-  'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=60',
-  'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=800&q=60'
-];
-
-// Client-side post enhancement
-function enhancePost(post) {
-  return {
-    ...post,
-    trending: Math.random() > 0.7,
-    views: Math.floor(Math.random() * 1000) + 100
-  }
-}
-
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       <Head>
         <title>Trendiz - Tech & Lifestyle Trends</title>
-        <meta name="description" content="Trendiz - Your source for the latest tech and lifestyle trends" />
+        <meta name="description" content="Your source for the latest tech and lifestyle trends" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Welcome to Trendiz
-        </h1>
-        
-        <div className="text-center mb-8">
-          <p className="text-xl text-gray-600">
-            Your source for the latest tech and lifestyle trends
-          </p>
-          <p className="mt-4 text-gray-500">
-            We're launching soon! Stay tuned for amazing content.
-          </p>
-        </div>
+      <Header />
+      <TopicNav />
 
-        <div className="max-w-2xl mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-center text-indigo-600">Coming Soon</h2>
-          <div className="space-y-4">
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
-              <span>AI-powered article generation</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
-              <span>Dynamic image fetching</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
-              <span>Comment system with upvoting</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
-              <span>Article reactions and sharing</span>
-            </div>
+      <main className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 space-y-8">
+            <NewArrivalsSection />
+            <WatchSection />
+            <GoogleAdsense slot="5839017069" />
+          </div>
+          <div className="space-y-8">
+            <NewsletterSection />
+            <QuizSection />
           </div>
         </div>
-
-        <GoogleAdsense slot="5839017069" />
       </main>
     </div>
   )
